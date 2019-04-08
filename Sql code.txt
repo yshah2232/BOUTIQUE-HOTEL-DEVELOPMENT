@@ -1,0 +1,80 @@
+mysql> CREATE database Hotel;
+Query OK, 1 row affected (0.27 sec)
+
+mysql> use Hotel;
+Database changed
+
+mysql> CREATE TABLE rooms(Room_No INT,Type VARCHAR(50),No_of_Beds INT,Floor INT,AC VARCHAR(50),Breakfast VARCHAR(50),WIFI VARCHAR(50),TV VARCHAR(50),Occupancy INT,Price FLOAT,PRIMARY KEY(Room_No));
+Query OK, 0 rows affected (0.72 sec)
+
+mysql> INSERT INTO rooms(Room_No,Type,No_of_Beds,Floor,Air_Conditioner,Television,WIFI,Breakfast,Occupancy,Price) VALUES ('101','Single',1,'1st','Yes','Yes','No','no',1,20);
+Query OK, 1 row affected (0.14 sec)
+
+mysql> INSERT INTO rooms(Room_No,Type,No_of_Beds,Floor,Air_Conditioner,Television,WIFI,Breakfast,Occupancy,Price) VALUES ('102','Single',1,'1st','No','Yes','No','No',1,18);
+Query OK, 1 row affected (0.16 sec)
+
+mysql> INSERT INTO rooms(Room_No,Type,No_of_Beds,Floor,Air_Conditioner,Television,WIFI,Breakfast,Occupancy,Price) VALUES ('201','Double',2,'2nd','Yes','Yes','Yes','No',2,25);
+Query OK, 1 row affected (0.11 sec)
+
+mysql> INSERT INTO rooms(Room_No,Type,No_of_Beds,Floor,Air_Conditioner,Television,WIFI,Breakfast,Occupancy,Price) VALUES ('202','Double',2,'2nd','Yes','Yes','Yes','Yes',2,28.5);
+Query OK, 1 row affected (0.11 sec)
+
+mysql> INSERT INTO rooms(Room_No,Type,No_of_Beds,Floor,Air_Conditioner,Television,WIFI,Breakfast,Occupancy,Price) VALUES ('203','Queen',1,'2nd','Yes','Yes','Yes','Yes',2,32.5);
+Query OK, 1 row affected (0.20 sec)
+
+mysql> INSERT INTO rooms(Room_No,Type,No_of_Beds,Floor,Air_Conditioner,Television,WIFI,Breakfast,Occupancy,Price) VALUES ('204','King',2,'2nd','Yes','Yes','Yes','Yes',2,28.5);
+Query OK, 1 row affected (0.16 sec)
+
+mysql> INSERT INTO rooms(Room_No,Type,No_of_Beds,Floor,Air_Conditioner,Television,WIFI,Breakfast,Occupancy,Price) VALUES ('301','Mini-Suite',2,'3rd','Yes','Yes','Yes','No',4,40);
+Query OK, 1 row affected (0.15 sec)
+
+mysql> INSERT INTO rooms(Room_No,Type,No_of_Beds,Floor,Air_Conditioner,Television,WIFI,Breakfast,Occupancy,Price) VALUES ('302','Family-Suite',3,'3rd','Yes','Yes','Yes','Yes',6,50);
+Query OK, 1 row affected (0.11 sec)
+
+mysql> INSERT INTO rooms(Room_No,Type,No_of_Beds,Floor,Air_Conditioner,Television,WIFI,Breakfast,Occupancy,Price) VALUES ('401','Master-Suite',4,'3rd','Yes','Yes','Yes','Yes',8,70);
+Query OK, 1 row affected (0.13 sec)
+
+mysql> INSERT INTO rooms(Room_No,Type,No_of_Beds,Floor,Air_Conditioner,WIFI,Occupancy,Price) VALUES 
+('501','Banquet Hall',5,'5th','Yes','Yes',150,6000);
+Query OK, 1 row affected (1.70 sec)
+
+mysql> INSERT INTO rooms(Room_No,Type,No_of_Beds,Floor,Air_Conditioner,WIFI,Occupancy,Price) VALUES 
+('502','Conference Room',5,'5th','Yes','Yes',15,2000);
+Query OK, 1 row affected (0.12 sec)
+
+mysql> select * from rooms;
++---------+--------------+------------+-------+-----------------+------------+------+-----------+-----------+-------+
+| Room_No | Type         | No_of_Beds | Floor | Air_Conditioner | Television | WIFI | Breakfast | Occupancy | Price |
++---------+--------------+------------+-------+-----------------+------------+------+-----------+-----------+-------+
+|     101 | Single       |          1 | 1st   | Yes             | Yes        | No   | no        |         1 |    20 |
+|     102 | Single       |          1 | 1st   | No              | Yes        | No   | No        |         1 |    18 |
+|     201 | Double       |          2 | 2nd   | Yes             | Yes        | Yes  | No        |         2 |    25 |
+|     202 | Double       |          2 | 2nd   | Yes             | Yes        | Yes  | Yes       |         2 |  28.5 |
+|     203 | King         |          1 | 2nd   | Yes             | Yes        | Yes  | Yes       |         2 |    35 |
+|     204 | Queen        |          1 | 2nd   | Yes             | Yes        | Yes  | Yes       |         2 |  32.5 |
+|     301 | Mini-Suite   |          2 | 3rd   | Yes             | Yes        | Yes  | No        |         4 |    40 |
+|     302 | Family-Suite |          3 | 3rd   | Yes             | Yes        | Yes  | Yes       |         6 |    50 |
+|     401 | Master-Suite |          4 | 3rd   | Yes             | Yes        | Yes  | Yes       |         8 |    70 |
+|     501 | Banquet Hall |          5 | 5th   | Yes             | NULL       | Yes  | NULL      |       150 |  6000 |
++---------+--------------+------------+-------+-----------------+------------+------+-----------+-----------+-------+
+10 rows in set (0.14 sec)
+
+mysql> CREATE TABLE Offers(Season VARCHAR(50),Discount VARCHAR(50),Offer_For VARCHAR(50),Room_No INT,Discounted_Price VARCHAR(50),FOREIGN KEY(Room_No) REFERENCES rooms(Room_No));
+Query OK, 0 rows affected (1.08 sec)
+
+mysql> INSERT INTO Offers(Season,Discount,Offer_For,Room_No,Discounted_Price) VALUES ('Thanksgiving','15%','Family-Suite','401',59.5);
+Query OK, 1 row affected (0.17 sec)
+
+mysql> SELECT*FROM OFFERS;
++--------------+----------+--------------+---------+------------------+
+| Season       | Discount | Offer_For    | Room_No | Discounted_Price |
++--------------+----------+--------------+---------+------------------+
+| Thanksgiving | 15%      | Family-Suite |     401 | 59.5             |
++--------------+----------+--------------+---------+------------------+
+1 row in set (0.00 sec)
+
+mysql> CREATE TABLE Dependent(P_CustomerID INT,DCID INT,Name VARCHAR(50),Age INT,Phone INT,PRIMARY KEY(DCID),FOREIGN KEY(P_CustomerID) REFERENCES P_CUSTOMER(P_CustomerID));
+Query OK, 0 rows affected (0.91 sec)
+
+mysql> CREATE TABLE PCustomer(PCID INT AUTO_INCREMENT,Name VARCHAR(50),Age INT,Phone_no INT,Government_ID VARCHAR(50),Payment_Type VARCHAR(50),PRIMARY KEY(PCID));
+Query OK, 0 rows affected (1.06 sec)

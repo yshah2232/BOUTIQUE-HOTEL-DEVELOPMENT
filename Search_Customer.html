@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+  <title>Star Hotels</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" >
+  <link href="Style.css" type="text/css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="container">
+            <div id="branding" >
+             <h1><span class="highlight">Star</span> Hotels</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a class=current href="Customer.html">Customer</a></li>
+                    <li><a href="Room.html">Room</a></li>
+					<li><a href="Dependants.html">Dependants</a></li>
+					<li><a href="offers.html">Offers</a></li>
+					<li><a href="event.html">Event</a></li>
+					<li><a href="Search_Customer.html">Customer Search</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+<section id="pcustomer">
+        <div class="container">
+            <h1>Enter Customer Contact No</h1>
+			<form name="pyform" method="POST" action="http://localhost/cgi-bin/Search_Customer.py">
+			<table>
+				<tr>
+					<td>Phone_no</td>
+					<td><input type="text" required name="Phone_no" size="72"/></td>
+				</tr>				
+			</table>
+			
+			<p><input type="submit" name="submit" value="Submit" style="height:40px;width:100px"/></p>
+			</form>
+			
+</body>
+</html>

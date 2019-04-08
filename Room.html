@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+  <title>Star Hotels</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" >
+  <link href="Style.css" type="text/css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="container">
+            <div id="branding" >
+             <h1><span class="highlight">Star</span> Hotels</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a class=current href="Customer.html">Customer</a></li>
+                    <li><a href="Room.html">Room</a></li>
+                    <li><a href="Reservation.html">Reservation</a></li>
+					<li><a href="Dependants.html">Dependants</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+<section id="room">
+        <div class="container">
+            <h1>Enter Room details</h1>
+			<form name="pyform" method="POST" action="http://localhost/cgi-bin/Room.py">
+			<table>
+				<tr>
+					<td>Room No</td>
+					<td><input type="text" required name="RID" /></td>
+				</tr>
+				<tr>
+					<td>Room Type</td>
+					<td><input list="ROOM_TYPE" required name="ROOM_TYPE" /></td>
+					<datalist id="ROOM_TYPE">
+						<option value="Single Room">
+						<option value="Double Room">
+						<Option value="Family Room">
+						<Option value="Mini-Suite">
+						<Option value="Master-Suite">
+						<Option value="Banquet Hall">
+						<Option value="Conference Room">
+						<Option value="Party Hall">
+					</datalist>
+				</tr>
+				<tr>
+					<td>Floor</td>
+					<td><input type="text" required name="FLOOR" /></td>
+				</tr>
+				<tr>
+					<td>NO_OF_BEDS</td>
+					<td><input type="text" name="NO_OF_BEDS"/></td>
+				</tr>
+				<tr>
+					<td>OCCUPANCY</td>
+					<td><input type="text" name="OCCUPANCY"/></td>
+				</tr>
+				<tr>
+					<td>WIFI</td>
+					<td><input list="Availability" name="WIFI"/></td>
+					<datalist id="Availability">
+						<option value="Yes">
+						<option value="No">
+						<Option value="N/A">
+					</datalist>
+				</tr>
+				<tr>
+					<td>TV</td>
+					<td><input list="Availability" name="TV" /></td>
+					<datalist id="Availability">
+						<option value="Yes">
+						<option value="No">
+						<Option value="N/A">
+					</datalist>
+				</tr>
+				<tr>
+					<td>BREAKFAST</td>
+					<td><input list="Availability" name="BREAKFAST"/></td>
+					<datalist id="Availability">
+						<option value="Yes">
+						<option value="No">
+						<Option value="N/A">
+					</datalist>
+				</tr>
+				<tr>
+					<td>AC</td>
+					<td><input list="Availability" name="AC" /></td>
+					<datalist id="Availability">
+						<option value="Yes">
+						<option value="No">
+						<Option value="N/A">
+					</datalist>
+				</tr>
+				<tr>
+					<td>PRICE</td>
+					<td><input type="text" required name="PRICE" /></td>
+				</tr>
+			</table>	
+			
+			<p><input type="submit" name="submit" value="Submit" style="height:40px;width:100px" href="Customer.html"/></p>
+			</form>
+			
+</body>
+</html>

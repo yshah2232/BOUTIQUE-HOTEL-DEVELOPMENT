@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+  <title>Star Hotels</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" >
+  <link href="Style.css" type="text/css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="container">
+            <div id="branding" >
+             <h1><span class="highlight">Star</span> Hotels</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a class=current href="Customer.html">Customer</a></li>
+                    <li><a href="Room.html">Room</a></li>
+                    <li><a href="Reservations.html">Reservations</a></li>
+					<li><a href="Dependants.html">Dependants</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+<section id="pcustomer">
+        <div class="container">
+            <h1>Enter Paying Customer details</h1>
+			<form name="pyform" method="POST" action="http://localhost/cgi-bin/Customer.py">
+			<table>
+				<tr>
+					<td>Name</td>
+					<td><input type="text" required name="name" size="72"/></td>
+				</tr>
+				<tr>
+					<td>Age</td>
+					<td><input type="text" name="Age" size="72"/></td>
+				</tr>
+				<tr>
+					<td>Phone_no</td>
+					<td><input type="text" required name="Phone_no" size="72"/></td>
+				</tr>
+				<tr>
+					<td>Government_ID</td>
+					<td><input type="text" required name="Government_ID" size="72"/></td>
+				</tr>
+				<tr>
+					<td>Payment_Type</td>
+					<td><input list="Payment_Type" required name="Payment_Type" /></td>
+					<datalist id="Payment_Type">
+						<option value="Credit Card">
+						<option value="Debit Card">
+						<option value="Cash">
+					</datalist>
+				<tr>
+			</table>
+			
+			
+			
+			<input type="checkbox" name="event_required" id="event_required">
+			<label for="event_required">Event details applicable</label>
+    
+			<div class="reveal-if-active">
+			<h1>Enter Event details</h1>
+			<table>
+				<tr>
+					<td>Event Type</td>
+					<td><input list="EVENT_TYPE" name="EVENT_TYPE"/></td>
+					<datalist id="EVENT_TYPE">
+						<option value="Birthday">
+						<option value="Wedding">
+						<Option value="Family Gatherings">
+						<Option value="Social Gatherings">
+						<Option value="Conference">
+					</datalist>
+				</tr>
+				<tr>
+					<td>Arrangements</td>
+					<td><select  name="ARRANGEMENTS" multiple>
+						<option value="Decoration">Decoration</Option>
+						<option value="Cakes">Cakes</Option>
+						<option value="Catering">Catering</Option>
+						<option value="Drinks">Drinks</Option>
+						<option value="Seating">Seating</Option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>No of People	</td>
+					<td><input type="text" name="NO_OF_PPL"/></td>
+				</tr>
+			</table>
+			</div>
+			
+			<input type="checkbox" name="event_required" id="event_required">
+			<label for="event_required">Event details applicable</label>
+			<p><input type="submit" name="submit" value="Submit" style="height:40px;width:100px"/></p>
+			</form>
+			
+</body>
+</html>

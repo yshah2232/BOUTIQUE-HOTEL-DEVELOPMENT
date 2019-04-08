@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+  <title>Star Hotels</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" >
+  <link href="Style.css" type="text/css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="container">
+            <div id="branding" >
+             <h1><span class="highlight">Star</span> Hotels</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a class=current href="Customer.html">Customer</a></li>
+                    <li><a href="Room.html">Room</a></li>
+                    <li><a href="Reservations.html">Reservations</a></li>
+		    <li><a href="Dependants.html">Dependants</a></li>
+                    <li><a href="offers.html">Offers</a></li>
+                    <li><a class=current href="event.html">Event</a></li>
+                </ul>
+            </nav>
+        </div>
+</header>
+<section id="pcustomer">
+        <div class="container">
+            <h1>Enter Paying Customer details</h1>
+			<form name="pyform" method="POST" action="http://localhost/cgi-bin/Event.py">
+			<table>
+                                <tr>
+					<td>Event ID</td>
+					<td><input list="EVENT_ID" name="EVENT_ID"/></td>
+				</tr>
+				<tr><td>Event Type</td>
+					<td><input list="EVENT_TYPE" name="EVENT_TYPE"/></td>
+					<datalist id="EVENT_TYPE">
+						<option value="Birthday">
+						<option value="Wedding">
+						<Option value="Family Gatherings">
+						<Option value="Social Gatherings">
+						<Option value="Conference">
+					</datalist>
+				</tr>
+				<tr>
+					<td>Arrangements</td>
+					<td><select  name="ARRANGEMENTS" multiple>
+						<option value="Decoration">Decoration</Option>
+						<option value="Cakes">Cakes</Option>
+						<option value="Catering">Catering</Option>
+						<option value="Drinks">Drinks</Option>
+						<option value="Seating">Seating</Option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>No of People	</td>
+					<td><input type="text" name="NO_OF_PPL"/></td>
+				</tr>
+                                <tr>
+					<td>Event Date	</td>
+					<td><input type="text" name="EVENT_DT"/></td>
+				</tr>
+<tr>
+					<td>PCID	</td>
+					<td><input type="text" name="PCID"/></td>
+				</tr>
+<tr>
+					<td>RID	</td>
+					<td><input type="text" name="RID"/></td>
+				</tr>
+			</table>
+			</div>
+			
+			<input type="checkbox" name="event_required" id="event_required">
+			<label for="event_required">Event details applicable</label>
+			<p><input type="submit" name="submit" value="Submit" style="height:40px;width:100px"/></p>
+			</form>
+			
+</body>
+</html>
