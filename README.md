@@ -1,9 +1,12 @@
-# BOUTIQUE-HOTEL-DEVELOPMENT
-SQL, Python, HTML
+# BOUTIQUE HOTEL DEVELOPMENT (STATIC) 
+## Technologies USed :SQL, Python, HTML
 
-1.	General description:
-The objective of this Project is to build a database system for boutique hotel business. Below are the entities considered while building the system-
-Entities -
+
+## General description:
+The objective of this Project is to build a database system for boutique hotel business. Below are the entities considered while building the system.
+
+__Entities- __ 
+
 1. P_CUSTOMER- Primary customer responsible for bookings, payments and events
 2. DEPENDANTS- Customers who are related to the primary customer
 3. ROOMS- Rooms available in the hotel
@@ -11,6 +14,8 @@ Entities -
 5. EVENT- Events that are organized by customers
 6. PAYMENT- Payment details of the bookings
 7. BOOKINGS- Reservations made by each primary customer
+
+__Assumptions__
 
 Assumptions based on the entities listed above-
 1. A Primary customer can book only one event at a time
